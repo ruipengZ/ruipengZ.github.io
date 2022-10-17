@@ -163,3 +163,17 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.is-horizontal-center {
+  justify-content: center;
+    /*top: 100%;*/
+    /*padding: 20%*/
+}
+
+.image-wrapper{
+    position: relative;
+    top: 25%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+}

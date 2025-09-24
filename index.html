@@ -1,37 +1,199 @@
 <!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <title>Ruipeng Zhang</title>
-  
   <meta name="author" content="Ruipeng Zhang">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <!-- <link rel="icon" type="image/png" href="images/seal_icon.png"> -->
+
+    <style>
+  /* Make the name/title big, regardless of the base stylesheet */
+  .name {
+    font-size: 10px;
+    line-height: 1.1;
+    font-weight: 300;
+  }
+  @media (min-width: 768px) {
+    .name { font-size: 30px !important; }
+  }
+</style>
+
+    <style>
+  .pub-big { font-size:18px; line-height:1.45; }
+  .pub-big .pub-title { font-size:21px; }
+  @media (min-width:768px){ .pub-big{font-size:19px} .pub-big .pub-title{font-size:22px} }
+</style>
+
+<link rel="shortcut icon" href="images/alisonfriend.png" type="image/x-icon">
+
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        
-   
+<table style="width:100%;max-width:1000px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+  <tbody>
+    <tr>
+      <td style="padding:0">
 
-        
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-                <a href="https://github.com/jonbarron/jonbarron_website">Original code of this website</a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
+        <!-- Header / Intro -->
+        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+          <tbody>
+            <tr>
+              <!-- Photo -->
+              <td style="padding:2.5%;width:30%;max-width:30%;">
+                <img src="images/alisonfriend.png" alt="Ruipeng Zhang" style="width:100%;max-width:100%;border-radius:8px;" class="hoverZoomLink"
+                     onerror="this.style.display='none'">
+              </td>
+
+              <!-- Text -->
+              <td style="padding:2.5%;width:70%;vertical-align:middle;">
+                <p class="name" style="text-align:left;">Ruipeng Zhang</p>
+                <p>
+                    I'm a Ph.D. student in Computer Science at UC San Diego (adviced by Prof. <a href="https://scungao.github.io/">Sicun Gao</a>)
+                </p>
+                  <p>
+                      I work on Reinforcement Learning, Robotics, Imitation Learning
+                  </p>
+                <p style="text-align:left">
+                  <a href="mailto:ruz019@ucsd.edu">Email</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=GCpGcxgAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/ruipengZ">GitHub</a> &nbsp;/&nbsp;
+                  <a href="RuipengZhang_CV.pdf">CV</a>
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- News (optional) -->
+<!--        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">-->
+<!--          <tbody>-->
+<!--            <tr>-->
+<!--              <td style="padding:2.5%;vertical-align:middle;">-->
+<!--                <h2>News</h2>-->
+<!--                <ul>-->
+<!--                  <li><b>2025</b>: Two papers at ICML 2025.</li>-->
+<!--                  <li>Working on imitation learning via latent variation matching.</li>-->
+<!--                </ul>-->
+<!--              </td>-->
+<!--            </tr>-->
+<!--          </tbody>-->
+<!--        </table>-->
+
+        <!-- Publications -->
+        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+          <tbody>
+            <tr>
+              <td style="padding:5%;vertical-align:middle;">
+                <h2>Selected Publications</h2>
+
+                <!-- Pub 1 -->
+                <table style="width:200%;border:0;border-spacing:0;border-collapse:separate;margin-bottom:20px;">
+                  <tr>
+
+                      <td style="padding:0 2.5% 0 0;width:25%;vertical-align:middle;">
+                      <!-- Optional thumbnail -->
+                       <img src="images/paper/whenpolicy.png" style="width:100%;border-radius:6px;" class="hoverZoomLink">
+                    </td>
+                    <td style="padding:0;vertical-align:middle;">
+                      <p>
+                        <b style="font-style:italic; font-size:16px; line-height:3;">When Maximum Entropy Misleads Policy Optimization</b><br>
+                        <u>Ruipeng Zhang</u>, Ya-Chien Chang, Sicun Gao<br>
+                        <em>ICML</em>, 2025.
+                        <a href="https://arxiv.org/abs/2506.05615">arXiv</a> |
+                          <a href="https://github.com/ruipengZ/maxent-mislead">code</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Pub 2 -->
+                <table style="width:200%;border:0;border-spacing:0;border-collapse:separate;margin-bottom:20px;">
+                  <tr>
+                    <td style="padding:0 2.5% 0 0;width:25%;vertical-align:middle;">
+                        <img src="images/paper/vpg.png" style="width:100%;border-radius:6px;" class="hoverZoomLink">
+                    </td>
+                    <td style="padding:0;vertical-align:middle;">
+                      <p>
+                        <b style="font-style:italic; font-size:16px; line-height:3;">Improving Value Estimation Critically Enhances Vanilla Policy Gradient</b><br>
+                        Tao Wang, <u>Ruipeng Zhang</u>, Sicun Gao<br>
+                        <em>ICML</em>, 2025.
+                        <a href="https://arxiv.org/abs/2505.19247">arXiv</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+              <!-- Pub 3 -->
+                <table style="width:200%;border:0;border-spacing:0;border-collapse:separate;margin-bottom:20px;">
+                  <tr>
+                    <td style="padding:0 2.5% 0 0;width:25%;vertical-align:middle;">
+                        <img src="images/paper/TOPP.png" style="width:100%;border-radius:6px;" class="hoverZoomLink">
+                    </td>
+                    <td style="padding:0;vertical-align:middle;">
+                      <p>
+                        <b style="font-style:italic; font-size:16px; line-height:3;">Sequence Modeling for Time-Optimal Quadrotor Trajectory Optimization with Sampling-based Robustness Analysis</b><br>
+                        Katherine Mao, Hongzhan Yu, <u>Ruipeng Zhang</u>, Igor Spasojevic, M Ani Hsieh, Sicun Gao, Vijay Kumar<br>
+                        <em>CoRL</em>, 2025.
+                        <a href="https://arxiv.org/abs/2505.19247">arXiv</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Pub 4 -->
+                <table style="width:200%;border:0;border-spacing:0;border-collapse:separate;margin-bottom:20px;">
+                  <tr>
+                    <td style="padding:0 2.5% 0 0;width:25%;vertical-align:middle;">
+                        <img src="images/paper/GNN.png" style="width:100%;border-radius:6px;" class="hoverZoomLink">
+                    </td>
+                    <td style="padding:0;vertical-align:middle;">
+                      <p>
+                        <b style="font-style:italic; font-size:16px; line-height:3;">Learning-based motion planning in dynamic environments using GNNs and temporal encoding</b><br>
+                        <u>Ruipeng Zhang</u>, Chenning Yu, Jingkai Chen, Chuchu Fan, Sicun Gao<br>
+                        <em>Neurips</em>, 2022.
+                        <a href="https://arxiv.org/abs/2210.08408">arXiv</a> |
+                          <a href="https://ruipengz.github.io/neurips22/">website</a> |
+                          <a href="https://github.com/ruipengZ/Dynamic-GNN-Planning/">code</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+<!--                <p>Full list on <a href="https://scholar.google.com/citations?user=GCpGcxgAAAAJ">Google Scholar</a>.</p>-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Teaching / Service (optional) -->
+        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+          <tbody>
+            <tr>
+              <td style="padding:2.5%;vertical-align:middle;">
+                <h2>Service</h2>
+                <p>Reviewer: NeurIPS</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+<!--        &lt;!&ndash; Footer / attribution &ndash;&gt;-->
+<!--        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">-->
+<!--          <tbody>-->
+<!--            <tr>-->
+<!--              <td style="padding:2.5%;">-->
+<!--                <p style="text-align:right;font-size:small;">-->
+<!--                  <a href="https://github.com/jonbarron/jonbarron_website">Original code of this website</a>-->
+<!--                </p>-->
+<!--              </td>-->
+<!--            </tr>-->
+<!--          </tbody>-->
+<!--        </table>-->
 
       </td>
     </tr>
-  </table>
+  </tbody>
+</table>
 </body>
-
 </html>

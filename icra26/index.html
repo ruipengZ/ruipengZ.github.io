@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Quadruped Walking from Seconds of Demonstration</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Academicons (for the official arXiv mark) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css"
+          referrerpolicy="no-referrer"
+          crossorigin="anonymous">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
+
+    body {
+      font-family: 'Google Sans', sans-serif;
+      background-color: #ffffff;
+      color: #4a4a4a;
+      line-height: 1.6;
+    }
+
+    /* Expansive central column */
+    .content-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* More space between blocks */
+    .section-spacing {
+      padding: 40px 0;
+    }
+
+    /* Nerfies Style Buttons */
+    .external-link {
+      background-color: #363636;
+      border-color: transparent;
+      color: #fff;
+      border-radius: 28px;
+      padding: 10px 22px;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      margin: 4px;
+    }
+
+    .external-link:hover {
+      background-color: #000;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Academicons arXiv glyph sizing + baseline alignment */
+    .arxiv-ai {
+      font-size: 20px;     /* matches lucide w-5 h-5 */
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      top: 1px;            /* tweak 0~2px if you want perfect baseline */
+    }
+
+    h2.title {
+      font-weight: 700;
+      color: #363636;
+      margin-bottom: 32px;
+      text-transform: none;
+    }
+
+    .publication-authors a {
+      color: #3273dc;
+      text-decoration: none;
+    }
+
+    .publication-authors a:hover {
+      text-decoration: underline;
+    }
+
+    pre {
+      background-color: #f8fafc;
+      padding: 30px;
+      border-radius: 12px;
+      font-size: 14px;
+      overflow-x: auto;
+      border: 1px solid #e2e8f0;
+    }
+  </style>
+</head>
+
+<body class="pt-32 pb-20">
+
+  <header class="content-container text-center mb-16">
+    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight leading-tight">
+      Learning Quadruped Walking from <br> Seconds of Demonstration
+    </h1>
+
+    <div class="text-xl publication-authors mb-3">
+      <span class="px-1"><a href="#">Ruipeng Zhang</a>,</span>
+      <span class="px-1"><a href="#">Hongzhan Yu</a>,</span>
+      <span class="px-1"><a href="#">Ya-Chien Chang</a>,</span>
+      <span class="px-1"><a href="#">Chenghao Li</a>,</span>
+      <span class="px-1"><a href="#">Henrik I. Christensen</a>,</span>
+      <span class="px-1"><a href="#">Sicun Gao</a></span>
+    </div>
+
+    <div class="text-lg mb-10 text-slate-500">
+      <span class="px-4">University of California, San Diego</span>
+    </div>
+
+    <div class="flex flex-wrap justify-center mb-8 gap-2">
+      <a href="#" class="external-link">
+        <i data-lucide="file-text" class="w-5 h-5"></i>
+        <span>Paper</span>
+      </a>
+
+      <!-- Official arXiv mark via Academicons -->
+      <a href="#" class="external-link">
+        <i class="ai ai-arxiv arxiv-ai"></i>
+        <span>arXiv</span>
+      </a>
+
+      <a href="#" class="external-link">
+        <i data-lucide="video" class="w-5 h-5"></i>
+        <span>Video</span>
+      </a>
+
+      <a href="#" class="external-link">
+        <i data-lucide="github" class="w-5 h-5"></i>
+        <span>Code</span>
+      </a>
+    </div>
+  </header>
+
+
+
+  <section class="content-container section-spacing border-t border-slate-100">
+    <h2 class="title text-3xl text-center">Abstract</h2>
+    <div class="max-w-5xl mx-auto">
+      <p class="text-gray-600 text-lg leading-relaxed font-light">
+        Quadruped locomotion provides a natural setting for understanding when model-free learning can outperform model-based control design, by exploiting data patterns to bypass the difficulty of optimizing over discrete contacts and the combinatorial explosion of mode changes. We give a principled analysis of why imitation learning with quadrupeds can be inherently effective in a small data regime, based on the structure of limit cycles, Poincar&#39;e return maps, and local numerical properties of neural networks. The understanding motivates a new imitation learning method that regularizes the alignment of distributions in a latent representation space with the output action variations. Hardware experiments confirm that a few seconds of demonstration is sufficient to train various locomotion policies from scratch entirely offline with reasonable robustness.
+      </p>
+    </div>
+  </section>
+
+<section class="content-container section-spacing border-t border-slate-100">
+  <h2 class="title text-3xl text-center">Pipeline</h2>
+      <div class="content-container mb-20">
+    <div class="aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center text-white border border-slate-200">
+        <p class="italic text-slate-400">[Hero Video: Robot learning in real-time]</p>
+    </div>
+  </div>
+</section>
+
+  <section class="content-container section-spacing border-t border-slate-100">
+    <h2 class="title text-3xl text-center">Methodology</h2>
+    <div class="mb-12 flex justify-center">
+      <div class="w-full bg-slate-50 rounded-2xl p-12 border border-slate-100 text-center text-slate-400 shadow-sm">
+        [Insert Architecture Diagram Here]
+      </div>
+    </div>
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-gray-600 text-lg leading-relaxed">
+        Our approach utilizes a <strong>Hierarchical Latent Mapper</strong>. Instead of learning joint torques directly, we learn to navigate a manifold of stable gaits. This reduces the search space significantly, allowing the robot to &quot;match&quot; the human&#39;s demonstration in real-time.
+      </p>
+    </div>
+  </section>
+
+
+
+  <section class="content-container section-spacing border-t border-slate-100">
+    <h2 class="title text-3xl text-center">BibTeX</h2>
+    <div class="max-w-3xl mx-auto">
+      <pre><code>@article{quadruped_walking2026,
+  author    = {One, Author and Two, Author and Three, Author},
+  title     = {Learning Quadruped Walking from Seconds of Demonstration},
+  journal   = {ICRA},
+  year      = {2026},
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="text-center py-20 text-sm text-gray-400 border-t border-slate-100">
+    <p class="mb-2">© 2026 Robotics Lab</p>
+    <p>
+      This website is licensed under a
+      <a href="#" class="underline">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+  </footer>
+
+  <script>
+    // Render Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

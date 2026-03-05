@@ -11,37 +11,65 @@
   <!-- Lucide -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Academicons (for the official arXiv mark) -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css"
-          referrerpolicy="no-referrer"
-          crossorigin="anonymous">
+  <!-- Academicons (official arXiv mark) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css"
+        referrerpolicy="no-referrer"
+        crossorigin="anonymous">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
 
-    body {
-      font-family: 'Google Sans', sans-serif;
-      background-color: #ffffff;
-      color: #4a4a4a;
-      line-height: 1.6;
+    :root{
+      --ink: #0f172a;         /* slate-900 */
+      --text: #334155;        /* slate-700 */
+      --muted: #64748b;       /* slate-500 */
+      --border: #e2e8f0;      /* slate-200 */
+      --panel: rgba(248, 250, 252, 0.78); /* slate-50 with transparency */
     }
 
-    /* Expansive central column */
+html, body { height: 100%; }
+
+body {
+  font-family: 'Google Sans', sans-serif;
+  color: #334155;              /* slate-700 */
+  line-height: 1.65;
+
+  /* Page-wide gradient background */
+  background:
+    radial-gradient(900px 520px at 18% -12%, rgba(59,130,246,0.20) 0%, rgba(59,130,246,0.00) 62%),
+    radial-gradient(900px 520px at 82% -12%, rgba(168,85,247,0.16) 0%, rgba(168,85,247,0.00) 62%),
+    radial-gradient(1200px 700px at 50% -240px, rgba(241,245,249,1) 0%, rgba(255,255,255,1) 60%);
+  background-attachment: fixed; /* keeps it stable when scrolling */
+
+
+
+}
+
+
+    /* Wider overall column to reduce "narrow/pale" feel */
     .content-container {
-      max-width: 1000px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 44px;
     }
 
-    /* More space between blocks */
-    .section-spacing {
-      padding: 40px 0;
+    .section-spacing { padding: 44px 0; }
+
+    /* Section panel for more depth */
+    .section-panel{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 42px 44px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      backdrop-filter: blur(6px);
     }
 
-    /* Nerfies Style Buttons */
+    /* Nerfies Style Buttons (slightly less flat) */
     .external-link {
-      background-color: #363636;
-      border-color: transparent;
+      background-color: #1f2937; /* slate-800 */
+      border: 1px solid rgba(255,255,255,0.08);
       color: #fff;
       border-radius: 28px;
       padding: 10px 22px;
@@ -52,58 +80,68 @@
       text-decoration: none;
       transition: all 0.2s ease;
       margin: 4px;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.10);
     }
 
     .external-link:hover {
-      background-color: #000;
+      background-color: #0b1220;
       color: #fff;
       transform: translateY(-2px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 14px 22px -8px rgba(0, 0, 0, 0.25);
     }
 
     /* Academicons arXiv glyph sizing + baseline alignment */
     .arxiv-ai {
-      font-size: 20px;     /* matches lucide w-5 h-5 */
+      font-size: 20px;
       line-height: 1;
       display: inline-flex;
       align-items: center;
       position: relative;
-      top: 1px;            /* tweak 0~2px if you want perfect baseline */
+      top: 1px;
     }
 
     h2.title {
       font-weight: 700;
-      color: #363636;
-      margin-bottom: 32px;
+      color: #0f172a; /* slate-900 */
+      margin-bottom: 28px;
       text-transform: none;
+      letter-spacing: -0.02em;
     }
 
     .publication-authors a {
-      color: #3273dc;
+      color: #2563eb; /* blue-600 */
       text-decoration: none;
     }
 
-    .publication-authors a:hover {
-      text-decoration: underline;
-    }
+    .publication-authors a:hover { text-decoration: underline; }
 
     pre {
-      background-color: #f8fafc;
-      padding: 30px;
-      border-radius: 12px;
+      background-color: rgba(248, 250, 252, 0.9);
+      padding: 28px;
+      border-radius: 16px;
       font-size: 14px;
       overflow-x: auto;
-      border: 1px solid #e2e8f0;
+      border: 1px solid var(--border);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
     }
   </style>
 </head>
 
-<body class="pt-32 pb-20">
+<body class="pt-28 pb-20">
 
-  <header class="content-container text-center mb-16">
-    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight leading-tight">
+  <header class="content-container text-center mb-14">
+    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight">
       Learning Quadruped Walking from <br> Seconds of Demonstration
     </h1>
+
+    <div class="mt-2 mb-7">
+      <div class="text-lg md:text-xl text-slate-600 tracking-tight">
+        via
+      </div>
+      <div class="text-2xl md:text-3xl font-semibold italic text-slate-900 tracking-tight">
+        Latent Variation Regularization
+      </div>
+    </div>
 
     <div class="text-xl publication-authors mb-3">
       <span class="px-1"><a href="#">Ruipeng Zhang</a>,</span>
@@ -114,17 +152,16 @@
       <span class="px-1"><a href="#">Sicun Gao</a></span>
     </div>
 
-    <div class="text-lg mb-10 text-slate-500">
+    <div class="text-lg mb-9 text-slate-600">
       <span class="px-4">University of California, San Diego</span>
     </div>
 
-    <div class="flex flex-wrap justify-center mb-8 gap-2">
+    <div class="flex flex-wrap justify-center gap-2">
       <a href="#" class="external-link">
         <i data-lucide="file-text" class="w-5 h-5"></i>
         <span>Paper</span>
       </a>
 
-      <!-- Official arXiv mark via Academicons -->
       <a href="#" class="external-link">
         <i class="ai ai-arxiv arxiv-ai"></i>
         <span>arXiv</span>
@@ -142,64 +179,264 @@
     </div>
   </header>
 
+  <!-- ABSTRACT -->
+  <section class="content-container section-spacing">
+    <div class="section-panel">
+      <h2 class="title text-3xl text-center">Abstract</h2>
 
-
-  <section class="content-container section-spacing border-t border-slate-100">
-    <h2 class="title text-3xl text-center">Abstract</h2>
-    <div class="max-w-5xl mx-auto">
-      <p class="text-gray-600 text-lg leading-relaxed font-light">
-        Quadruped locomotion provides a natural setting for understanding when model-free learning can outperform model-based control design, by exploiting data patterns to bypass the difficulty of optimizing over discrete contacts and the combinatorial explosion of mode changes. We give a principled analysis of why imitation learning with quadrupeds can be inherently effective in a small data regime, based on the structure of limit cycles, Poincar&#39;e return maps, and local numerical properties of neural networks. The understanding motivates a new imitation learning method that regularizes the alignment of distributions in a latent representation space with the output action variations. Hardware experiments confirm that a few seconds of demonstration is sufficient to train various locomotion policies from scratch entirely offline with reasonable robustness.
-      </p>
+      <div class="max-w-6xl mx-auto">
+        <p class="text-slate-700 text-lg leading-relaxed font-light">
+          Quadruped locomotion provides a natural setting for understanding when model-free learning can outperform model-based control design, by exploiting data patterns to bypass the difficulty of optimizing over discrete contacts and mode changes. We give a principled analysis of why imitation learning with quadrupeds can be effective in a small data regime, based on the structure of limit cycles, Poincar&eacute; return maps, and local numerical properties of neural networks. The understanding motivates a new imitation learning method
+          <span class="font-semibold italic text-slate-900">Latent Variation Regularization (LVR)</span>
+          that regularizes the alignment of distributions in a latent representation space with the output action variations. Hardware experiments confirm that a few seconds of demonstration is sufficient to train locomotion policies from scratch entirely offline with reasonable robustness.
+        </p>
+      </div>
     </div>
   </section>
 
-<section class="content-container section-spacing border-t border-slate-100">
-  <h2 class="title text-3xl text-center">Pipeline</h2>
-      <div class="content-container mb-20">
-    <div class="aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center text-white border border-slate-200">
-        <p class="italic text-slate-400">[Hero Video: Robot learning in real-time]</p>
+  <!-- PIPELINE -->
+  <section class="content-container section-spacing">
+    <div class="section-panel">
+      <h2 class="title text-3xl text-center">Pipeline</h2>
+
+      <div class="mx-auto">
+        <div class="aspect-video bg-black rounded-3xl overflow-hidden shadow-xl border border-slate-300">
+          <video
+            class="w-full h-full object-cover"
+            src="video/pipeline.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            controls
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
     </div>
+  </section>
+
+<!-- PERFORMANCE -->
+<section class="content-container section-spacing">
+  <div class="section-panel">
+    <h2 class="title text-3xl text-center">Performance</h2>
+
+        <!-- 1) Same training dataset (10s) -->
+    <div class="mt-2">
+      <h3 class="text-xl md:text-2xl font-semibold text-slate-900 tracking-tight text-center">
+        Train on the same training dataset (10s)
+      </h3>
+      <p class="text-center text-slate-600 mt-2">
+        Two representative trials trained from the same 10-second demonstration.
+      </p>
+
+          <!-- Trials side-by-side -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+
+      <!-- Trial 1 (BC on top, Ours below) -->
+      <div class="rounded-2xl overflow-hidden border border-slate-100 shadow-xl bg-black">
+        <!-- Big title: light gradient -->
+<div class="px-5 py-4 bg-gradient-to-r from-sky-50/95 via-white/90 to-indigo-50/85 border-b border-slate-200 flex items-center justify-between gap-3
+">
+  <div class="text-slate-900 font-semibold text-lg">Trial 1</div>
+  <div class="text-slate-600 text-sm">BC / LVR </div>
+</div>
+
+        <!-- BC -->
+        <div class="border-b border-white/10">
+          <div class="px-3 py-2 bg-gradient-to-r from-slate-900/90 to-slate-800/60 text-white/95 text-sm text-center font-semibold border-l-3 border-white/20">
+            Behavior Cloning
+          </div>
+          <div class="aspect-video">
+            <video class="w-full h-full object-cover"
+                   src="video/BC1.mp4"
+                   autoplay muted loop playsinline controls preload="metadata"></video>
+          </div>
+        </div>
+
+        <!-- Ours -->
+<div class="border-b border-white/10">
+          <div class="px-3 py-2 bg-gradient-to-r from-slate-900/90 to-slate-800/60 text-white/95 text-sm text-center font-semibold border-l-3 border-white/20">
+            LVR
+          </div>
+          <div class="aspect-video">
+            <video class="w-full h-full object-cover"
+                   src="video/Ours1.mp4"
+                   autoplay muted loop playsinline controls preload="metadata"></video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trial 2 (BC on top, Ours below) -->
+      <div class="rounded-3xl overflow-hidden border border-slate-300 shadow-xl bg-black">
+        <!-- Big title: light gradient -->
+        <div class="px-5 py-4 bg-gradient-to-r from-sky-50/95 via-white/90 to-indigo-50/85 border-b border-slate-200 flex items-center justify-between gap-3
+">
+          <div class="text-slate-900 font-semibold text-lg">Trial 2</div>
+          <div class="text-slate-600 text-sm">BC / LVR</div>
+        </div>
+
+        <!-- BC -->
+<div class="border-b border-white/10">
+          <div class="px-3 py-2 bg-gradient-to-r from-slate-900/90 to-slate-800/60 text-white/95 text-sm text-center font-semibold border-l-3 border-white/20">
+            Behavior Cloning
+          </div>
+          <div class="aspect-video">
+            <video class="w-full h-full object-cover"
+                   src="video/BC2.mp4"
+                   autoplay muted loop playsinline controls preload="metadata"></video>
+          </div>
+        </div>
+
+        <!-- Ours -->
+<div class="border-b border-white/10">
+          <div class="px-3 py-2 bg-gradient-to-r from-slate-900/90 to-slate-800/60 text-white/95 text-sm text-center font-semibold border-l-3 border-white/20">
+            LVR
+          </div>
+          <div class="aspect-video">
+            <video class="w-full h-full object-cover"
+                   src="video/Ours2.mp4"
+                   autoplay muted loop playsinline controls preload="metadata"></video>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="my-12 border-t border-slate-200"></div>
+
+    <!-- 2) Various gaits -->
+    <div>
+      <h3 class="text-xl md:text-2xl font-semibold text-slate-900 tracking-tight text-center">
+        Various gaits
+      </h3>
+      <p class="text-center text-slate-600 mt-2">
+        Learned behaviors spanning distinct gait styles.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div class="rounded-3xl overflow-hidden border border-slate-300 shadow-xl bg-black">
+          <div class="px-5 py-4 bg-gradient-to-r from-sky-50/95 via-white/90 to-indigo-50/85 border-b border-slate-200 flex items-center justify-between gap-3
+">
+            <div class="text-slate-900 font-semibold">Gait A</div>
+<!--            <div class="text-slate-600 text-sm">Example behavior</div>-->
+          </div>
+          <div class="aspect-video">
+            <video class="w-full h-full object-cover"
+                   src="video/behaviors1.mp4"
+                   autoplay muted loop playsinline controls preload="metadata"></video>
+          </div>
+        </div>
+
+        <div class="rounded-3xl overflow-hidden border border-slate-300 shadow-xl bg-black">
+          <div class="px-5 py-4 bg-gradient-to-r from-sky-50/95 via-white/90 to-indigo-50/85 border-b border-slate-200 flex items-center justify-between gap-3
+">
+            <div class="text-slate-900 font-semibold">Gait B</div>
+<!--            <div class="text-slate-600 text-sm">Example behavior</div>-->
+          </div>
+          <div class="aspect-video">
+            <video class="w-full h-full object-cover"
+                   src="video/behaviors2.mp4"
+                   autoplay muted loop playsinline controls preload="metadata"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="my-12 border-t border-slate-200"></div>
+
+    <!-- 3) Domain robustness -->
+    <div>
+      <h3 class="text-xl md:text-2xl font-semibold text-slate-900 tracking-tight text-center">
+        Training data from flat ground; robust to diverse domains
+      </h3>
+      <p class="text-center text-slate-600 mt-2">
+        Policies trained on a single source domain data remain stable under domain shifts.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div class="rounded-3xl overflow-hidden border border-slate-300 shadow-xl bg-black">
+          <div class="px-5 py-4 bg-gradient-to-r from-sky-50/95 via-white/90 to-indigo-50/85 border-b border-slate-200 flex items-center justify-between gap-3
+">
+            <div class="text-slate-900 font-semibold">Domain Shift 1</div>
+            <div class="text-slate-600 text-sm">Different terrain and condition</div>
+          </div>
+          <div class="aspect-video">
+            <video class="w-full h-full object-cover"
+                   src="video/domain1.mp4"
+                   autoplay muted loop playsinline controls preload="metadata"></video>
+          </div>
+        </div>
+
+        <div class="rounded-3xl overflow-hidden border border-slate-300 shadow-xl bg-black">
+          <div class="px-5 py-4 bg-gradient-to-r from-sky-50/95 via-white/90 to-indigo-50/85 border-b border-slate-200 flex items-center justify-between gap-3
+">
+            <div class="text-slate-900 font-semibold">Domain Shift 2</div>
+            <div class="text-slate-600 text-sm">Different terrain and condition</div>
+          </div>
+          <div class="aspect-video">
+            <video class="w-full h-full object-cover"
+                   src="video/domain2.mp4"
+                   autoplay muted loop playsinline controls preload="metadata"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-  <section class="content-container section-spacing border-t border-slate-100">
-    <h2 class="title text-3xl text-center">Methodology</h2>
-    <div class="mb-12 flex justify-center">
-      <div class="w-full bg-slate-50 rounded-2xl p-12 border border-slate-100 text-center text-slate-400 shadow-sm">
-        [Insert Architecture Diagram Here]
+
+
+  <!-- METHODOLOGY -->
+  <section class="content-container section-spacing">
+    <div class="section-panel">
+      <h2 class="title text-3xl text-center">Methodology</h2>
+
+      <div class="mb-10 flex justify-center">
+        <div class="w-full bg-white/70 rounded-3xl p-10 border border-slate-200 text-center text-slate-500 shadow-sm">
+          [Insert Architecture Diagram Here]
+        </div>
       </div>
-    </div>
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="text-gray-600 text-lg leading-relaxed">
-        Our approach utilizes a <strong>Hierarchical Latent Mapper</strong>. Instead of learning joint torques directly, we learn to navigate a manifold of stable gaits. This reduces the search space significantly, allowing the robot to &quot;match&quot; the human&#39;s demonstration in real-time.
-      </p>
+
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-slate-700 text-lg leading-relaxed font-light">
+          Our approach utilizes a <strong class="text-slate-900 font-semibold">Hierarchical Latent Mapper</strong>.
+          Instead of learning joint torques directly, we learn to navigate a manifold of stable gaits.
+          This reduces the search space significantly, allowing the robot to &quot;match&quot; the human&#39;s demonstration in real-time.
+        </p>
+      </div>
     </div>
   </section>
 
-
-
-  <section class="content-container section-spacing border-t border-slate-100">
-    <h2 class="title text-3xl text-center">BibTeX</h2>
-    <div class="max-w-3xl mx-auto">
-      <pre><code>@article{quadruped_walking2026,
+  <!-- BIBTEX -->
+  <section class="content-container section-spacing">
+    <div class="section-panel">
+      <h2 class="title text-3xl text-center">BibTeX</h2>
+      <div class="max-w-5xl mx-auto">
+        <pre><code>@article{quadruped_walking2026,
   author    = {One, Author and Two, Author and Three, Author},
   title     = {Learning Quadruped Walking from Seconds of Demonstration},
   journal   = {ICRA},
   year      = {2026},
 }</code></pre>
+      </div>
     </div>
   </section>
 
-  <footer class="text-center py-20 text-sm text-gray-400 border-t border-slate-100">
-    <p class="mb-2">© 2026 Robotics Lab</p>
-    <p>
-      This website is licensed under a
-      <a href="#" class="underline">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-    </p>
+  <footer class="content-container text-center py-16 text-sm text-slate-500">
+    <div class="border-t border-slate-200 pt-10">
+      <p class="mb-2">© 2026 Robotics Lab</p>
+      <p>
+        This website is licensed under a
+        <a href="#" class="underline decoration-slate-400 hover:decoration-slate-700">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+    </div>
   </footer>
 
   <script>
-    // Render Lucide icons
     lucide.createIcons();
   </script>
 </body>

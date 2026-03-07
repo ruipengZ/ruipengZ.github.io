@@ -1,201 +1,330 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ruipeng Zhang</title>
-  <meta name="author" content="Ruipeng Zhang">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title>Ruipeng Zhang | UCSD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+ <style>
+:root {
+  --primary: #4f46e5;       /* Electric Indigo */
+  --primary-hover: #4338ca;
+  --text-main: #1e293b;     /* Deep Slate */
+  --text-muted: #64748b;    /* Muted Slate */
 
-    <style>
-  /* Make the name/title big, regardless of the base stylesheet */
-  .name {
-    font-size: 10px;
-    line-height: 1.1;
-    font-weight: 300;
+  /* CHANGE: Solid white for maximum contrast */
+--card-bg: rgba(255, 255, 255, 0.82);
+
+  /* CHANGE: Slightly darker border to define the card edges */
+  --border: #e2e8f0;
+
+  --tag-bg: #eef2ff;
+  --tag-text: #4338ca;
+}
+
+body {
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #fffdfa;
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(255, 224, 196, 0.55) 0, transparent 35%),
+    radial-gradient(circle at 100% 0%, rgba(220, 238, 255, 0.5) 0, transparent 38%),
+    radial-gradient(circle at 50% 100%, rgba(255, 244, 214, 0.45) 0, transparent 42%),
+    linear-gradient(180deg, #fffdfa 0%, #fffefb 45%, #ffffff 100%);
+  background-attachment: fixed;
+}
+
+
+
+  /*background-color: #fffaf5; */
+  /*background-image:*/
+  /*  radial-gradient(at 0% 0%, hsla(30, 100%, 95%, 1) 0, transparent 50%),   !* <--- Apricot *!*/
+  /*  radial-gradient(at 50% 0%, hsla(20, 100%, 96%, 1) 0, transparent 50%),  !* <--- Peach *!*/
+  /*  radial-gradient(at 100% 0%, hsla(38, 100%, 94%, 1) 0, transparent 50%), !* <--- Warm Amber *!*/
+  /*  radial-gradient(at 0% 100%, hsla(25, 100%, 96%, 1) 0, transparent 50%), !* <--- Soft Coral *!*/
+  /*  radial-gradient(at 100% 100%, hsla(35, 100%, 95%, 1) 0, transparent 50%); !* <--- Golden *!*/
+  /*background-attachment: fixed;*/
+
+  .container { max-width: 1050px; margin: 0 auto; padding: 60px 30px; }
+
+  /* Bio Section */
+  .hero { display: flex; align-items: center; gap: 50px; margin-bottom: 70px; }
+  .hero-img {
+    width: 180px; height: 180px; border-radius: 24px; object-fit: cover;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 4px solid white;
   }
-  @media (min-width: 768px) {
-    .name { font-size: 30px !important; }
+  .name { font-size: 3.2rem; font-weight: 800; margin: 0; color: #0f172a; letter-spacing: -1.5px; }
+
+  .social-nav { margin-top: 25px; }
+  .social-nav a {
+    text-decoration: none; color: var(--primary); font-weight: 600; margin-right: 20px;
+    font-size: 0.95rem; transition: 0.2s; border-bottom: 2px solid transparent;
   }
+  .social-nav a:hover { border-bottom-color: var(--primary); }
+
+  /* Section Headings */
+  h2 {
+    font-size: 1.6rem; margin: 60px 0 30px 0; font-weight: 700; color: #0f172a;
+    display: flex; align-items: center; gap: 15px;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+  /* Publication Card - High Contrast Version */
+    .pub-item {
+      display: flex;
+      gap: 40px;
+      background: var(--card-bg);
+      padding: 35px; /* Added more padding for breathability */
+      border-radius: 24px; /* Slightly rounder for a modern feel */
+      margin-bottom: 35px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* CHANGE: Sharper white border to separate from the apricot background */
+      border: 1px solid #ffffff;
+
+      /* CHANGE: Multi-layered shadow for physical depth (elevation) */
+      box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.05),
+        0 4px 6px -2px rgba(0, 0, 0, 0.03),
+        0 20px 25px -5px rgba(0, 0, 0, 0.02);
+    }
+
+    .pub-item:hover {
+      transform: translateY(-8px);
+      /* CHANGE: Shadow becomes more pronounced on hover */
+      box-shadow: 0 30px 50px -12px rgba(79, 70, 229, 0.2);
+      border-color: var(--primary);
+    }
+
+
+  .pub-img-container { flex-shrink: 0; width: 330px; border-radius: 16px; overflow: hidden; }
+  .pub-img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; }
+  .pub-item:hover .pub-img { transform: scale(1.05); }
+
+  .pub-info { flex: 1; }
+  .pub-title { font-size: 1.3rem; font-weight: 700; color: #0f172a; line-height: 1.3; display: block; margin-bottom: 10px; }
+  .pub-authors { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 15px; }
+  .me { color: #0f172a; font-weight: 700; border-bottom: 2px solid var(--primary); }
+
+  .venue-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+  }
+
+  /* Buttons */
+  .pub-links { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+  .pub-links a, .bib-summary {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-main);
+    padding: 6px 16px;
+    background: #ffffff;
+    border-radius: 8px;
+    transition: all 0.2s;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+
+  .pub-links a:hover, .bib-summary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: #f5f3ff;
+  }
+
+  /* BibTeX Styling */
+  .bib-box {
+    background: #f1f5f9;
+    color: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    margin-top: 15px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    border: 1px dashed var(--border);
+  }
+
+  .social-nav a i {
+  margin-right: 6px;
+  font-size: 1.1rem;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+
 </style>
-
-    <style>
-  .pub-big { font-size:18px; line-height:1.45; }
-  .pub-big .pub-title { font-size:21px; }
-  @media (min-width:768px){ .pub-big{font-size:19px} .pub-big .pub-title{font-size:22px} }
-</style>
-
-<link rel="shortcut icon" href="images/alisonfriend.png" type="image/x-icon">
-
 </head>
-
 <body>
-<table style="width:100%;max-width:1000px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-  <tbody>
-    <tr>
-      <td style="padding:0">
 
-        <!-- Header / Intro -->
-        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-          <tbody>
-            <tr>
-              <!-- Photo -->
-              <td style="padding:2.5%;width:30%;max-width:30%;">
-                <img src="images/alisonfriend.png" alt="Ruipeng Zhang" style="width:100%;max-width:100%;border-radius:8px;" class="hoverZoomLink"
-                     onerror="this.style.display='none'">
-              </td>
+<div class="container">
 
-              <!-- Text -->
-              <td style="padding:2.5%;width:70%;vertical-align:middle;">
-                <p class="name" style="text-align:left;">Ruipeng Zhang</p>
-                <p>
-                    I'm a Ph.D. student in Computer Science at UC San Diego (adviced by Prof. <a href="https://scungao.github.io/">Sicun Gao</a>)
-                </p>
-                  <p>
-                      I work on Reinforcement Learning, Robotics, Deep Learning
-                  </p>
-                <p style="text-align:left">
-                  <a href="mailto:ruz019@ucsd.edu">Email</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=GCpGcxgAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/ruipengZ">GitHub</a> &nbsp;/&nbsp;
-<!--                  <a href="RuipengZhang_CV.pdf">CV</a>-->
-                </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  <section class="hero">
+          <img src="images/alisonfriend.png" class="hero-img" alt="Ruipeng Zhang">
 
-        <!-- News (optional) -->
-<!--        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">-->
-<!--          <tbody>-->
-<!--            <tr>-->
-<!--              <td style="padding:2.5%;vertical-align:middle;">-->
-<!--                <h2>News</h2>-->
-<!--                <ul>-->
-<!--                  <li><b>2025</b>: Two papers at ICML 2025.</li>-->
-<!--                  <li>Working on imitation learning via latent variation matching.</li>-->
-<!--                </ul>-->
-<!--              </td>-->
-<!--            </tr>-->
-<!--          </tbody>-->
-<!--        </table>-->
+    <div class="hero-text">
+      <h1 class="name">Ruipeng Zhang</h1>
+      <p style="font-size: 1.2rem; color: #444;">
+        Hi! I am a Ph.D. student in Computer Science at <b>UC San Diego</b>.<br>
+        Advised by Prof. <a href="https://scungao.github.io/" style="color:var(--primary); text-decoration:none;">Sicun Gao</a>.
+      </p>
+      <p>Research Interests: <b>Reinforcement Learning, Robotics, and Deep Learning.</b></p>
+<div class="social-nav">
+  <a href="mailto:ruz019@ucsd.edu"><i class="fa-regular fa-envelope"></i> Email</a>
+  <a href="https://scholar.google.com/citations?user=GCpGcxgAAAAJ"><i class="fa-graduation-cap fas"></i> Scholar</a>
+  <a href="https://github.com/ruipengZ"><i class="fa-brands fa-github"></i> GitHub</a>
+</div>
+    </div>
+  </section>
 
-        <!-- Publications -->
-        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-          <tbody>
-            <tr>
-              <td style="padding:5%;vertical-align:middle;">
-                <h2>Selected Publications</h2>
+  <h2>Selected Publications</h2>
 
-                <!-- Pub 1 -->
-                <table style="width:200%;border:0;border-spacing:0;border-collapse:separate;margin-bottom:20px;">
-                  <tr>
+    <div class="pub-item">
+    <div class="pub-img-container">
+      <img src="images/paper/lvr.gif" class="pub-img" alt="Quadruped Walking Demo">
+    </div>
+    <div class="pub-info">
+      <span class="venue-tag">ICRA 2026</span>
+      <span class="pub-title">Learning Quadruped Walking from Seconds of Demonstration</span>
+      <div class="pub-authors"><span class="me">Ruipeng Zhang</span>, Hongzhan Yu, Ya-Chien Chang, Chenghao Li, Henrik I. Christensen, Sicun Gao</div>
+      <div class="pub-links">
+        <a href="#">arXiv (Soon)</a>
+        <a href="https://latent-variation-regularization.github.io/">Website</a>
+        <details>
+          <summary class="bib-summary">BibTeX</summary>
+          <div class="bib-box">@inproceedings{zhang2026learning,
+  title={Learning Quadruped Walking from Seconds of Demonstration},
+  author={Zhang, Ruipeng and Yu, Hongzhan and Chang, Ya-Chien and Li, Chenghao and Christensen, Henrik I. and Gao, Sicun},
+  booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
+  year={2026}
+}</div>
+        </details>
+      </div>
+    </div>
+  </div>
 
-                      <td style="padding:0 2.5% 0 0;width:25%;vertical-align:middle;">
-                      <!-- Optional thumbnail -->
-                       <img src="images/paper/whenpolicy.png" style="width:100%;border-radius:6px;" class="hoverZoomLink">
-                    </td>
-                    <td style="padding:0;vertical-align:middle;">
-                      <p>
-                        <b style="font-style:italic; font-size:16px; line-height:3;">When Maximum Entropy Misleads Policy Optimization</b><br>
-                        <u>Ruipeng Zhang</u>, Ya-Chien Chang, Sicun Gao<br>
-                        <em>ICML</em>, 2025.
-                        <a href="https://arxiv.org/abs/2506.05615">arXiv</a> |
-                          <a href="https://github.com/ruipengZ/maxent-mislead">code</a> |
-                          <a href="https://icml.cc/media/icml-2025/Slides/45888.pdf">slides</a>
-                      </p>
-                    </td>
-                  </tr>
-                </table>
+  <div class="pub-item">
+    <div class="pub-img-container">
+      <img src="images/paper/whenpolicy.png" class="pub-img" alt="Paper Image">
+    </div>
+    <div class="pub-info">
+      <span class="venue-tag">ICML 2025</span>
+      <span class="pub-title">When Maximum Entropy Misleads Policy Optimization</span>
+      <div class="pub-authors"><span class="me">Ruipeng Zhang</span>, Ya-Chien Chang, Sicun Gao</div>
+      <div class="pub-links">
+        <a href="https://arxiv.org/abs/2506.05615">arXiv</a>
+        <a href="https://github.com/ruipengZ/maxent-mislead">Code</a>
+        <a href="https://icml.cc/media/icml-2025/Slides/45888.pdf">Slides</a>
+        <details>
+          <summary class="bib-summary">BibTeX</summary>
+          <div class="bib-box">@article{zhang2025maximum,
+  title={When maximum entropy misleads policy optimization},
+  author={Zhang, Ruipeng and Chang, Ya-Chien and Gao, Sicun},
+  journal={arXiv preprint arXiv:2506.05615},
+  year={2025}
+}</div>
+        </details>
+      </div>
+    </div>
+  </div>
 
-                <!-- Pub 2 -->
-                <table style="width:200%;border:0;border-spacing:0;border-collapse:separate;margin-bottom:20px;">
-                  <tr>
-                    <td style="padding:0 2.5% 0 0;width:25%;vertical-align:middle;">
-                        <img src="images/paper/vpg.png" style="width:100%;border-radius:6px;" class="hoverZoomLink">
-                    </td>
-                    <td style="padding:0;vertical-align:middle;">
-                      <p>
-                        <b style="font-style:italic; font-size:16px; line-height:3;">Improving Value Estimation Critically Enhances Vanilla Policy Gradient</b><br>
-                        Tao Wang, <u>Ruipeng Zhang</u>, Sicun Gao<br>
-                        <em>ICML</em>, 2025.
-                        <a href="https://arxiv.org/abs/2505.19247">arXiv</a> |
-                          <a href="https://github.com/taowang0/value-estimation-vpg">code</a>
-                      </p>
-                    </td>
-                  </tr>
-                </table>
+  <div class="pub-item">
+    <div class="pub-img-container">
+      <img src="images/paper/vpg.png" class="pub-img" alt="Paper Image">
+    </div>
+    <div class="pub-info">
+      <span class="venue-tag">ICML 2025</span>
+      <span class="pub-title">Improving Value Estimation Critically Enhances Vanilla Policy Gradient</span>
+      <div class="pub-authors">Tao Wang, <span class="me">Ruipeng Zhang</span>, Sicun Gao</div>
+      <div class="pub-links">
+        <a href="https://arxiv.org/abs/2505.19247">arXiv</a>
+        <a href="https://github.com/taowang0/value-estimation-vpg">Code</a>
+        <details>
+          <summary class="bib-summary">BibTeX</summary>
+          <div class="bib-box">@article{wang2025improving,
+  title={Improving value estimation critically enhances vanilla policy gradient},
+  author={Wang, Tao and Zhang, Ruipeng and Gao, Sicun},
+  journal={arXiv preprint arXiv:2505.19247},
+  year={2025}
+}</div>
+        </details>
+      </div>
+    </div>
+  </div>
 
-              <!-- Pub 3 -->
-                <table style="width:200%;border:0;border-spacing:0;border-collapse:separate;margin-bottom:20px;">
-                  <tr>
-                    <td style="padding:0 2.5% 0 0;width:25%;vertical-align:middle;">
-                        <img src="images/paper/TOPP.png" style="width:100%;border-radius:6px;" class="hoverZoomLink">
-                    </td>
-                    <td style="padding:0;vertical-align:middle;">
-                      <p>
-                        <b style="font-style:italic; font-size:16px; line-height:3;">Sequence Modeling for Time-Optimal Quadrotor Trajectory Optimization with Sampling-based Robustness Analysis</b><br>
-                        Katherine Mao, Hongzhan Yu, <u>Ruipeng Zhang</u>, Igor Spasojevic, M Ani Hsieh, Sicun Gao, Vijay Kumar<br>
-                        <em>CoRL</em>, 2025.
-                        <a href="https://arxiv.org/abs/2505.19247">arXiv</a>
-                      </p>
-                    </td>
-                  </tr>
-                </table>
+  <div class="pub-item">
+    <div class="pub-img-container">
+      <img src="images/paper/TOPP.png" class="pub-img" alt="Paper Image">
+    </div>
+    <div class="pub-info">
+      <span class="venue-tag">CoRL 2025</span>
+      <span class="pub-title">Sequence Modeling for Time-Optimal Quadrotor Trajectory Optimization with Sampling-based Robustness Analysis</span>
+      <div class="pub-authors">Katherine Mao, Hongzhan Yu, <span class="me">Ruipeng Zhang</span>, Igor Spasojevic, M Ani Hsieh, Sicun Gao, Vijay Kumar</div>
+      <div class="pub-links">
+        <a href="https://arxiv.org/abs/2506.13915">arXiv</a>
+        <a href="https://github.com/maokat12/lbTOPPQuad">Code</a>
+        <details>
+          <summary class="bib-summary">BibTeX</summary>
+          <div class="bib-box">@article{mao2025sequence,
+  title={Sequence Modeling for Time-Optimal Quadrotor Trajectory Optimization with Sampling-based Robustness Analysis},
+  author={Mao, Katherine and Yu, Hongzhan and Zhang, Ruipeng and Spasojevic, Igor and Hsieh, M Ani and Gao, Sicun and Kumar, Vijay},
+  journal={arXiv preprint arXiv:2506.13915},
+  year={2025}
+}</div>
+        </details>
+      </div>
+    </div>
+  </div>
 
-                <!-- Pub 4 -->
-                <table style="width:200%;border:0;border-spacing:0;border-collapse:separate;margin-bottom:20px;">
-                  <tr>
-                    <td style="padding:0 2.5% 0 0;width:25%;vertical-align:middle;">
-                        <img src="images/paper/GNN.png" style="width:100%;border-radius:6px;" class="hoverZoomLink">
-                    </td>
-                    <td style="padding:0;vertical-align:middle;">
-                      <p>
-                        <b style="font-style:italic; font-size:16px; line-height:3;">Learning-based motion planning in dynamic environments using GNNs and temporal encoding</b><br>
-                        <u>Ruipeng Zhang</u>, Chenning Yu, Jingkai Chen, Chuchu Fan, Sicun Gao<br>
-                        <em>Neurips</em>, 2022.
-                        <a href="https://arxiv.org/abs/2210.08408">arXiv</a> |
-                          <a href="https://ruipengz.github.io/neurips22/">website</a> |
-                          <a href="https://github.com/ruipengZ/Dynamic-GNN-Planning/">code</a>
-                      </p>
-                    </td>
-                  </tr>
-                </table>
+  <div class="pub-item">
+    <div class="pub-img-container">
+      <img src="images/paper/GNN.png" class="pub-img" alt="Paper Image">
+    </div>
+    <div class="pub-info">
+      <span class="venue-tag">NeurIPS 2022</span>
+      <span class="pub-title">Learning-based motion planning in dynamic environments using GNNs and temporal encoding</span>
+      <div class="pub-authors"><span class="me">Ruipeng Zhang</span>, Chenning Yu, Jingkai Chen, Chuchu Fan, Sicun Gao</div>
+      <div class="pub-links">
+        <a href="https://arxiv.org/abs/2210.08408">arXiv</a>
+        <a href="https://ruipengz.github.io/neurips22/">Website</a>
+        <a href="https://github.com/ruipengZ/Dynamic-GNN-Planning/">Code</a>
+        <details>
+          <summary class="bib-summary">BibTeX</summary>
+          <div class="bib-box">@article{zhang2022learning,
+  title={Learning-based motion planning in dynamic environments using gnns and temporal encoding},
+  author={Zhang, Ruipeng and Yu, Chenning and Chen, Jingkai and Fan, Chuchu and Gao, Sicun},
+  journal={Advances in Neural Information Processing Systems},
+  volume={35},
+  pages={30003--30015},
+  year={2022}
+}</div>
+        </details>
+      </div>
+    </div>
+  </div>
 
-<!--                <p>Full list on <a href="https://scholar.google.com/citations?user=GCpGcxgAAAAJ">Google Scholar</a>.</p>-->
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  <h2>Professional Service</h2>
+  <p style="padding-left: 20px;"><b>Reviewer:</b> NeurIPS</p>
 
-        <!-- Teaching / Service (optional) -->
-        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
-          <tbody>
-            <tr>
-              <td style="padding:2.5%;vertical-align:middle;">
-                <h2>Service</h2>
-                <p>Reviewer: NeurIPS</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  <footer style="margin-top: 100px; text-align: center; font-size: 0.9rem; color: #94a3b8; padding-bottom: 50px;">
+    &copy; 2026 Ruipeng Zhang &bull; UC San Diego
+  </footer>
 
-<!--        &lt;!&ndash; Footer / attribution &ndash;&gt;-->
-<!--        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">-->
-<!--          <tbody>-->
-<!--            <tr>-->
-<!--              <td style="padding:2.5%;">-->
-<!--                <p style="text-align:right;font-size:small;">-->
-<!--                  <a href="https://github.com/jonbarron/jonbarron_website">Original code of this website</a>-->
-<!--                </p>-->
-<!--              </td>-->
-<!--            </tr>-->
-<!--          </tbody>-->
-<!--        </table>-->
+</div>
 
-      </td>
-    </tr>
-  </tbody>
-</table>
 </body>
 </html>

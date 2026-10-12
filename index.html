@@ -200,6 +200,34 @@ body {
   opacity: 0.9;
 }
 
+  /* Experience Section */
+  .exp-item {
+    background: var(--card-bg);
+    padding: 30px 35px;
+    border-radius: 24px;
+    margin-bottom: 25px;
+    border: 1px solid #ffffff;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.05),
+      0 4px 6px -2px rgba(0, 0, 0, 0.03),
+      0 20px 25px -5px rgba(0, 0, 0, 0.02);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .exp-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 50px -12px rgba(79, 70, 229, 0.2);
+    border-color: var(--primary);
+  }
+
+  .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; }
+  .exp-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; }
+  .exp-org { font-size: 0.95rem; color: var(--text-muted); font-weight: 600; }
+  .exp-date { font-size: 0.8rem; color: var(--primary); font-weight: 700; white-space: nowrap; }
+  .exp-subtitle { font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin: 6px 0 12px 0; }
+  .exp-item ul { margin: 0; padding-left: 20px; color: var(--text-main); font-size: 0.95rem; }
+  .exp-item li { margin-bottom: 6px; }
+
 </style>
 </head>
 <body>
@@ -220,6 +248,7 @@ body {
   <a href="mailto:ruz019@ucsd.edu"><i class="fa-regular fa-envelope"></i> Email</a>
   <a href="https://scholar.google.com/citations?user=GCpGcxgAAAAJ"><i class="fa-graduation-cap fas"></i> Scholar</a>
   <a href="https://github.com/ruipengZ"><i class="fa-brands fa-github"></i> GitHub</a>
+  <a href="https://www.linkedin.com/in/ruipeng-zhang-a889b3258"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
 </div>
     </div>
   </section>
@@ -352,8 +381,20 @@ body {
     </div>
   </div>
 
+  <h2>Experience</h2>
+
+  <div class="exp-item" style="display: flex; align-items: center; gap: 20px;">
+    <div style="flex-shrink: 0; width: 56px; height: 56px; border-radius: 14px; overflow: hidden;">
+      <img src="images/amazon-icon.png" alt="Amazon" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="exp-header" style="flex: 1;">
+      <span class="exp-title">Applied Scientist Intern — Amazon Industrial Robotics Group</span>
+      <span class="exp-date">Jun. 2026 – Sept. 2026</span>
+    </div>
+  </div>
+
   <h2>Professional Service</h2>
-  <p style="padding-left: 20px;"><b>Reviewer:</b> NeurIPS</p>
+  <p style="padding-left: 20px;"><b>Reviewer:</b> NeurIPS, ICML, ICLR, ICRA, IROS</p>
 
   <footer style="margin-top: 100px; text-align: center; font-size: 0.9rem; color: #94a3b8; padding-bottom: 50px;">
     &copy; 2026 Ruipeng Zhang &bull; UC San Diego

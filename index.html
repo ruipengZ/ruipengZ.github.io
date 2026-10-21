@@ -4,7 +4,7 @@
     <link rel="icon" type="image/png" href="images/alisonfriend.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ruipeng Zhang</title>
+  <title>Ruipeng Zhang | UC San Diego</title>
     <meta name="description" content="Ruipeng Zhang is a Ph.D. student in Computer Science at UC San Diego advised by Sicun Gao. Her research focuses on reinforcement learning, robotics, and deep learning.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://ruipengz.github.io/">
@@ -13,7 +13,7 @@
 <meta property="og:description" content="Ph.D. student in Computer Science at UC San Diego. Research in reinforcement learning, robotics, and deep learning.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ruipengz.github.io/">
-<meta property="og:image" content="https://ruipengz.github.io/images/alisonfriend.png">
+<meta property="og:image" content="https://ruipengz.github.io/images/ruipeng-profile.jpg">
 
 <script type="application/ld+json">
 {
@@ -23,7 +23,7 @@
     "@type": "Person",
     "name": "Ruipeng Zhang",
     "url": "https://ruipengz.github.io/",
-    "image": "https://ruipengz.github.io/images/alisonfriend.png",
+    "image": "https://ruipengz.github.io/images/ruipeng-profile.jpg",
     "jobTitle": "Ph.D. Student in Computer Science",
     "affiliation": {
       "@type": "CollegeOrUniversity",
@@ -38,212 +38,95 @@
 </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
- <style>
-:root {
-  --primary: #4f46e5;       /* Electric Indigo */
-  --primary-hover: #4338ca;
-  --text-main: #1e293b;     /* Deep Slate */
-  --text-muted: #64748b;    /* Muted Slate */
+<style>
+:root { --primary:#245b7b; --ink:#252a2e; --muted:#687078; --line:#deded8; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:#fcfcf9; color:var(--ink); font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:1.75; }
+a { color:var(--primary); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:4px; }
+a:focus-visible,summary:focus-visible { outline:2px solid var(--primary); outline-offset:5px; }
+.container { max-width:1000px; margin:auto; padding:0 38px; }
+.site-nav { display:flex; justify-content:space-between; gap:24px; padding:25px 0; border-bottom:1px solid var(--line); font-size:12px; letter-spacing:.05em; }
+.site-nav .wordmark { color:var(--ink); font-weight:600; }
+.site-nav div { display:flex; gap:25px; }
+.hero { display:flex; flex-direction:row-reverse; align-items:center; gap:64px; padding:65px 0 47px; }
+.hero-text { flex:1; }
+.hero-img { width:174px; height:194px; object-fit:cover; border-radius:2px; filter:saturate(.8); }
+.eyebrow { margin:0 0 9px; color:var(--muted); text-transform:uppercase; font-size:10px; letter-spacing:.16em; }
+.name { font-family:Georgia,'Times New Roman',serif; font-size:43px; font-weight:400; line-height:1.2; letter-spacing:-1px; margin:0 0 22px; }
+.hero-text p { margin:12px 0; }
+.hero-text p.bio { font-size:15px!important; color:var(--ink)!important; }
+b { font-weight:600; }
+.social-nav { display:flex; flex-wrap:wrap; gap:19px; margin-top:23px; font-size:13px; }
+.social-nav i { display:inline-block; margin-right:6px; font-size:13px; vertical-align:baseline; }
+h2 { font-family:Georgia,'Times New Roman',serif; font-size:26px; font-weight:400; margin:31px 0 0; padding-bottom:13px; border-bottom:1px solid var(--line); }
+.pub-item { display:flex; gap:28px; padding:27px 0; border-bottom:1px solid var(--line); }
+.pub-img-container { flex:0 0 230px; align-self:center; }
+.pub-img { width:100%; max-height:170px; object-fit:contain; display:block; }
+.pub-info { flex:1; min-width:0; }
+.venue-tag { display:block; font-size:10px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); margin-bottom:5px; }
+.pub-title { display:block; font-size:16px; line-height:1.45; font-weight:600; color:var(--primary); margin-bottom:7px; }
+.pub-authors { font-size:12px; line-height:1.7; color:var(--muted); }
+.me { color:var(--ink); font-weight:600; }
+.pub-links { display:flex; flex-wrap:wrap; align-items:baseline; gap:16px; margin-top:9px; font-size:12px; }
+.pub-links details { position:relative; }
+.bib-summary { color:var(--primary); cursor:pointer; }
+.bib-box { background:#f0f1ed; padding:16px; margin-top:10px; white-space:pre-wrap; overflow-wrap:anywhere; font-family:monospace; font-size:11px; max-width:520px; }
+.exp-item { padding:23px 0; }
+.exp-header { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+.exp-title { font-size:14px; font-weight:600; }
+.exp-date { color:var(--muted); font-size:12px; }
+.service { font-size:14px; padding:0!important; }
+footer { border-top:1px solid var(--line); margin-top:48px!important; padding:22px 0 32px!important; text-align:left!important; color:var(--muted)!important; font-size:11px!important; }
+@media(max-width:650px) { .container { padding:0 23px; } .site-nav { font-size:11px; } .site-nav div { gap:14px; } .hero { gap:22px; padding:38px 0 22px; align-items:flex-start; } .hero-img { width:95px; height:112px; } .name { font-size:33px; } .hero-text p.bio { font-size:14px!important; } .pub-item { gap:18px; } .pub-img-container { flex-basis:140px; } .pub-title { font-size:14px; } }
+@media(max-width:430px) { .pub-img-container:empty { display:none; } .hero { position:relative; display:block; } .hero-img { float:right; margin:0 0 16px 16px; width:83px; height:98px; } .name { font-size:30px; padding-top:4px; } .eyebrow { max-width:190px; } .pub-item { flex-direction:column; gap:15px; } .pub-img-container { flex-basis:auto; width:210px; max-width:100%; align-self:flex-start; } .site-nav .wordmark { display:none; } .site-nav div { width:100%; justify-content:space-between; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 
-  /* CHANGE: Solid white for maximum contrast */
---card-bg: rgba(255, 255, 255, 0.82);
+.profile-photo { margin:0; flex-shrink:0; width:174px; }
+.selected-profile { display:block; width:100%; height:auto; border-radius:2px; }
+.profile-photo { aspect-ratio:4 / 5; overflow:hidden; position:relative; border-radius:2px; }
+.profile-photo .selected-profile { position:absolute; width:105%; max-width:none; height:auto; left:-5%; top:-2%; border-radius:0; }
+@media(max-width:650px) { .profile-photo { width:110px; } }
+@media(max-width:430px) { .profile-photo { float:right; margin:0 0 18px 16px; } }
 
-  /* CHANGE: Slightly darker border to define the card edges */
-  --border: #e2e8f0;
-
-  --tag-bg: #eef2ff;
-  --tag-text: #4338ca;
+/* Larger reading sizes. */
+body { font-size:18px; }
+.hero-text p.bio { font-size:18px!important; }
+.social-nav { font-size:16px; }
+.social-nav i { font-size:15px; }
+.site-nav { font-size:13px; }
+h2 { font-size:28px; }
+.pub-title { font-size:19px; }
+.pub-authors { font-size:15px; }
+.venue-tag { font-size:12px; }
+.pub-links { font-size:15px; }
+.exp-title, .service { font-size:17px; }
+.exp-date { font-size:14px; }
+footer { font-size:13px!important; }
+@media(max-width:650px) {
+  body { font-size:17px; }
+  .hero-text p.bio { font-size:17px!important; }
+  .pub-title { font-size:18px; }
 }
-
-body {
-  font-family: 'Inter', -apple-system, system-ui, sans-serif;
-  color: var(--text-main);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background-color: #fffdfa;
-  background-image:
-    radial-gradient(circle at 0% 0%, rgba(255, 224, 196, 0.55) 0, transparent 35%),
-    radial-gradient(circle at 100% 0%, rgba(220, 238, 255, 0.5) 0, transparent 38%),
-    radial-gradient(circle at 50% 100%, rgba(255, 244, 214, 0.45) 0, transparent 42%),
-    linear-gradient(180deg, #fffdfa 0%, #fffefb 45%, #ffffff 100%);
-  background-attachment: fixed;
-}
-
-
-
-  /*background-color: #fffaf5; */
-  /*background-image:*/
-  /*  radial-gradient(at 0% 0%, hsla(30, 100%, 95%, 1) 0, transparent 50%),   !* <--- Apricot *!*/
-  /*  radial-gradient(at 50% 0%, hsla(20, 100%, 96%, 1) 0, transparent 50%),  !* <--- Peach *!*/
-  /*  radial-gradient(at 100% 0%, hsla(38, 100%, 94%, 1) 0, transparent 50%), !* <--- Warm Amber *!*/
-  /*  radial-gradient(at 0% 100%, hsla(25, 100%, 96%, 1) 0, transparent 50%), !* <--- Soft Coral *!*/
-  /*  radial-gradient(at 100% 100%, hsla(35, 100%, 95%, 1) 0, transparent 50%); !* <--- Golden *!*/
-  /*background-attachment: fixed;*/
-
-  .container { max-width: 1050px; margin: 0 auto; padding: 60px 30px; }
-
-  /* Bio Section */
-  .hero { display: flex; align-items: center; gap: 50px; margin-bottom: 70px; }
-  .hero-img {
-    width: 180px; height: 180px; border-radius: 24px; object-fit: cover;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
-    border: 4px solid white;
-  }
-  .name { font-size: 3.2rem; font-weight: 800; margin: 0; color: #0f172a; letter-spacing: -1.5px; }
-
-  .social-nav { margin-top: 25px; }
-  .social-nav a {
-    text-decoration: none; color: var(--primary); font-weight: 600; margin-right: 20px;
-    font-size: 0.95rem; transition: 0.2s; border-bottom: 2px solid transparent;
-  }
-  .social-nav a:hover { border-bottom-color: var(--primary); }
-
-  /* Section Headings */
-  h2 {
-    font-size: 1.6rem; margin: 60px 0 30px 0; font-weight: 700; color: #0f172a;
-    display: flex; align-items: center; gap: 15px;
-  }
-  h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-
-  /* Publication Card - High Contrast Version */
-    .pub-item {
-      display: flex;
-      gap: 40px;
-      background: var(--card-bg);
-      padding: 35px; /* Added more padding for breathability */
-      border-radius: 24px; /* Slightly rounder for a modern feel */
-      margin-bottom: 35px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-      /* CHANGE: Sharper white border to separate from the apricot background */
-      border: 1px solid #ffffff;
-
-      /* CHANGE: Multi-layered shadow for physical depth (elevation) */
-      box-shadow:
-        0 10px 15px -3px rgba(0, 0, 0, 0.05),
-        0 4px 6px -2px rgba(0, 0, 0, 0.03),
-        0 20px 25px -5px rgba(0, 0, 0, 0.02);
-    }
-
-    .pub-item:hover {
-      transform: translateY(-8px);
-      /* CHANGE: Shadow becomes more pronounced on hover */
-      box-shadow: 0 30px 50px -12px rgba(79, 70, 229, 0.2);
-      border-color: var(--primary);
-    }
-
-
-  .pub-img-container { flex-shrink: 0; width: 330px; border-radius: 16px; overflow: hidden; }
-  .pub-img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; }
-  .pub-item:hover .pub-img { transform: scale(1.05); }
-
-  .pub-info { flex: 1; }
-  .pub-title { font-size: 1.3rem; font-weight: 700; color: #0f172a; line-height: 1.3; display: block; margin-bottom: 10px; }
-  .pub-authors { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 15px; }
-  .me { color: #0f172a; font-weight: 700; border-bottom: 2px solid var(--primary); }
-
-  .venue-tag {
-    display: inline-block;
-    padding: 4px 12px;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    border-radius: 99px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 12px;
-  }
-
-  /* Buttons */
-  .pub-links { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-
-  .pub-links a, .bib-summary {
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-main);
-    padding: 6px 16px;
-    background: #ffffff;
-    border-radius: 8px;
-    transition: all 0.2s;
-    border: 1px solid var(--border);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  }
-
-  .pub-links a:hover, .bib-summary:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-    background: #f5f3ff;
-  }
-
-  /* BibTeX Styling */
-  .bib-box {
-    background: #f1f5f9;
-    color: #1e293b;
-    padding: 20px;
-    border-radius: 12px;
-    font-family: 'Fira Code', monospace;
-    font-size: 0.75rem;
-    margin-top: 15px;
-    white-space: pre-wrap;
-    line-height: 1.5;
-    border: 1px dashed var(--border);
-  }
-
-  .social-nav a i {
-  margin-right: 6px;
-  font-size: 1.1rem;
-  vertical-align: middle;
-  opacity: 0.9;
-}
-
-  /* Experience Section */
-  .exp-item {
-    background: var(--card-bg);
-    padding: 30px 35px;
-    border-radius: 24px;
-    margin-bottom: 25px;
-    border: 1px solid #ffffff;
-    box-shadow:
-      0 10px 15px -3px rgba(0, 0, 0, 0.05),
-      0 4px 6px -2px rgba(0, 0, 0, 0.03),
-      0 20px 25px -5px rgba(0, 0, 0, 0.02);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .exp-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 30px 50px -12px rgba(79, 70, 229, 0.2);
-    border-color: var(--primary);
-  }
-
-  .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; }
-  .exp-title { font-size: 1.15rem; font-weight: 700; color: #0f172a; }
-  .exp-org { font-size: 0.95rem; color: var(--text-muted); font-weight: 600; }
-  .exp-date { font-size: 0.8rem; color: var(--primary); font-weight: 700; white-space: nowrap; }
-  .exp-subtitle { font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin: 6px 0 12px 0; }
-  .exp-item ul { margin: 0; padding-left: 20px; color: var(--text-main); font-size: 0.95rem; }
-  .exp-item li { margin-bottom: 6px; }
-
+.venue-tag { color:#454e56; }
+.container { padding-bottom:64px; }
 </style>
 </head>
 <body>
 
 <div class="container">
+<nav class="site-nav" aria-label="Main navigation"><a class="wordmark" href="#about">RUIPENG ZHANG</a><div><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#service">Service</a></div></nav>
 
-  <section class="hero">
-          <img src="images/alisonfriend.png" class="hero-img" alt="Ruipeng Zhang">
+  <section class="hero" id="about" aria-label="About Ruipeng Zhang">
+          <figure class="profile-photo"><img src="images/ruipeng-profile.jpg" class="selected-profile" alt="Ruipeng Zhang at the beach"></figure>
 
     <div class="hero-text">
       <h1 class="name">Ruipeng Zhang</h1>
-      <p style="font-size: 1.2rem; color: #444;">
-        Hi! I am a Ph.D. student in Computer Science at <b>UC San Diego</b>.<br>
-        Advised by Prof. <a href="https://scungao.github.io/" style="color:var(--primary); text-decoration:none;">Sicun Gao</a>.
+      <p class="bio">
+        Hi! I am a Ph.D. student in Computer Science at <b>UC San Diego</b>, advised by Prof. <a href="https://scungao.github.io/" style="color:var(--primary); text-decoration:none;">Sicun Gao</a>.
       </p>
-      <p>Research Interests: <b>Reinforcement Learning, Robotics, and Deep Learning.</b></p>
+      <p>I am broadly interested in reinforcement learning and robotics. Specifically, my work focuses on making reinforcement learning more sample efficient and enabling robots to learn useful behaviors from limited demonstrations. I was also an Applied Scientist Intern at Amazon’s Industrial Robotics Group in summer 2026.</p>
 <div class="social-nav">
   <a href="mailto:ruz019@ucsd.edu"><i class="fa-regular fa-envelope"></i> Email</a>
   <a href="https://scholar.google.com/citations?user=GCpGcxgAAAAJ"><i class="fa-graduation-cap fas"></i> Scholar</a>
@@ -253,7 +136,16 @@ body {
     </div>
   </section>
 
-  <h2>Selected Publications</h2>
+  <h2 id="publications">Selected Publications</h2>
+
+  <div class="pub-item pub-morr">
+    <div class="pub-img-container"><img src="images/paper/morr.png" class="pub-img" alt="MoRR overview: robot manipulation stages, policy routing weights, and residual policy improvement architecture" loading="lazy"></div>
+    <div class="pub-info">
+      <span class="venue-tag">ICRA 2027 · Under review</span>
+      <span class="pub-title">MoRR: Mode-Aware RL via Residual Policy Improvement Routing</span>
+      <div class="pub-authors"><span class="me">Ruipeng Zhang</span>, Sarthak Kaingade, Zhenyu Liao, Baljeet Singh, Sicun Gao, Bryan Trinh</div>
+    </div>
+  </div>
 
     <div class="pub-item">
     <div class="pub-img-container">
@@ -276,6 +168,27 @@ body {
   journal={arXiv preprint arXiv:2603.06961},
   year={2026}
 }}</div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <div class="pub-img-container"><img src="images/paper/sensitivity-shaping.png" class="pub-img" alt="Figure 1: Sensitivity shaping for reliable out-of-distribution detection in generative dynamics models" loading="lazy"></div>
+    <div class="pub-info">
+      <span class="venue-tag">CoRL 2026</span>
+      <a class="pub-title" href="https://arxiv.org/abs/2606.14585">Sensitivity Shaping for Latent Modeling</a>
+      <div class="pub-authors">Hongzhan Yu, Chenghao Li, <span class="me">Ruipeng Zhang</span>, Henrik Christensen, Sicun Gao</div>
+      <div class="pub-links">
+        <a href="https://arxiv.org/abs/2606.14585">arXiv</a>
+        <details>
+          <summary class="bib-summary">BibTeX</summary>
+          <div class="bib-box">@article{yu2026sensitivity,
+  title={Sensitivity Shaping for Latent Modeling},
+  author={Yu, Hongzhan and Li, Chenghao and Zhang, Ruipeng and Christensen, Henrik and Gao, Sicun},
+  journal={arXiv preprint arXiv:2606.14585},
+  year={2026}
+}</div>
         </details>
       </div>
     </div>
@@ -381,7 +294,7 @@ body {
     </div>
   </div>
 
-  <h2>Experience</h2>
+  <h2 id="experience">Experience</h2>
 
   <div class="exp-item" style="display: flex; align-items: center; gap: 20px;">
     <div style="flex-shrink: 0; width: 56px; height: 56px; border-radius: 14px; overflow: hidden;">
@@ -393,14 +306,11 @@ body {
     </div>
   </div>
 
-  <h2>Professional Service</h2>
-  <p style="padding-left: 20px;"><b>Reviewer:</b> NeurIPS, ICML, ICLR, ICRA, IROS</p>
-
-  <footer style="margin-top: 100px; text-align: center; font-size: 0.9rem; color: #94a3b8; padding-bottom: 50px;">
-    &copy; 2026 Ruipeng Zhang &bull; UC San Diego
-  </footer>
+  <h2 id="service">Professional Service</h2>
+  <p class="service"><b>Reviewer:</b> NeurIPS, ICML, ICLR, ICRA, IROS</p>
 
 </div>
+
 
 </body>
 </html>
